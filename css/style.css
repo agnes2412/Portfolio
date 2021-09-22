@@ -1,4 +1,514 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+#space_welcome {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    animation-name: space_welcome;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes space_welcome {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -10;
+    }
+}
+
 h1 {
+    font-size: 5em;
+    text-align: left;
+    color: rgb(246, 245, 250);
+    animation-duration: 3s;
+    animation-name: apparition_bienvenue;
+}
+
+@keyframes apparition_bienvenue {
+    0% {
+        transform: translateX(600px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+#my_name {
+    font-size: 2em;
+    text-align: right;
+    color: rgb(239, 238, 245);
+    background-color: #333;
+    padding: 10px 30px 30px 0px;
+}
+
+@keyframes apparition_my_name {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+#bloc_page {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+    animation-duration: 4s;
+    animation-name: apparition_body;
+}
+
+@keyframes apparition_body {
+    0% {
+        opacity: 0;
+    }
+    48% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav a{
+float: left;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+.projets {
+    float:left;
+    overflow: hidden;
+}
+
+.projets .projets_btn {
+font-size: 16px;
+border: none;
+outline: none;
+color: white;
+padding: 14px 16px;
+background-color: inherit;
+font-family: inherit;
+margin: 0;
+}
+
+nav a:hover, .projets:hover .projets_btn {
+    background-color: red;
+  }
+
+.projets_content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.projets_content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.projets_content a:hover {
+    background-color: #ddd;
+  }
+  
+  .projets:hover .projets_content {
+    display: block;
+  }
+
+h3 {
     text-align: center;
-    color: darkslateblue;
+    text-decoration-style: none;
+}
+
+p {
+    margin: 50px 0 20px 15px;
+    font-size: 1.2em;
+}
+
+#cartes_projets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: auto;
+    border: 2px solid violet;
+}
+
+@media (max-width: 1050px) {
+    #cartes_projets {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+#cartes_projets article {
+    width: 100%;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+@media (max-width: 1050px) {
+    #cartes_projets article {
+        width: 98%;
+        min-width: none;
+        max-width: none;
+    }
+}
+
+#cartes_projets article img {
+    width: 100%;
+    min-width: 300px;
+    padding: 10px;
+    height: auto;
+    border: 2px solid violet;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    filter: brightness(70%) grayscale(100%);
+    cursor: pointer;
+}
+
+.column img:hover {
+    filter: none;
+    border: 1px solid white;
+}
+
+@media (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/*Section reservia.html*/
+
+li {
+    display: inline;
+    margin-left: 20px;
+}
+
+#container_reservia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.carte_reservia1 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 360px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1500px) {
+    .carte_reservia1 {
+        width: 35%;
+    }
+}
+
+@media (max-width: 600px) {
+    .carte_reservia1 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+.carte_reservia2 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 490px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1500px) {
+    .carte_reservia2 {
+        width: 55%;
+    }
+}
+
+@media (max-width: 600px) {
+    .carte_reservia2 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+.carte_reservia3 {
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1500px) {
+    .carte_reservia3 {
+        max-width: 1150px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carte_reservia3 {
+        width: 95%;
+        max-width: 1235px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carte_reservia3 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+/*Section ohmyfood.html*/
+
+#container_ohmyfood {
+    border: 2px solid black;
+}
+
+#cartes_mobiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+
+#mobile1 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 500px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1020px) {
+    #mobile1 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#mobile2 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 500px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1020px) {
+    #mobile2 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#cartes_ipad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+
+#ipad1 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 700px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1420px) {
+    #ipad1 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#ipad2 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 700px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1420px) {
+    #ipad2 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#cartes_desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid blue;
+}
+
+#desktop1 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 700px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1420px) {
+    #desktop1 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#desktop2 {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 700px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1420px) {
+    #desktop2 {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+/*Section groupomania.html*/
+
+#container_groupomania {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    border: 2px solid black;
+}
+
+#groupomania_mobile {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 360px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1500px) {
+    #groupomania_mobile {
+        width: 35%;
+    }
+}
+
+@media (max-width: 600px) {
+    #groupomania_mobile {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#groupomania_ipad {
+    width: 90%;
+    margin-bottom: 10px;
+    max-width: 490px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1500px) {
+    #groupomania_ipad {
+        width: 55%;
+    }
+}
+
+@media (max-width: 600px) {
+    #groupomania_ipad {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+#groupomania_desktop {
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 5px 5px 10px rgb(8, 8, 8);
+}
+
+@media (max-width: 1500px) {
+    #groupomania_desktop {
+        max-width: 1150px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    #groupomania_desktop {
+        width: 95%;
+        max-width: 1235px;
+    }
+}
+
+@media (max-width: 600px) {
+    #groupomania_desktop {
+        width: 90%;
+        max-width: none;
+    }
 }
